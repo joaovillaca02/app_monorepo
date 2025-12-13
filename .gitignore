@@ -1,0 +1,4 @@
+node_modules
+lib
+.next
+server/db.sqlite3
