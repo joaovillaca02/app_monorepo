@@ -27,7 +27,53 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS Configuration
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+# Session Configuration
+SESSION_COOKIE_SAMESITE = "Lax"  # Mudado de "None" para "Lax" (funciona em localhost)
+SESSION_COOKIE_SECURE = False  # False para desenvolvimento (HTTP)
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_NAME = "sessionid"  # Nome do cookie
+SESSION_COOKIE_DOMAIN = None  # None permite localhost
+
+# Configurações de Sessão Persistente
+SESSION_COOKIE_AGE = 2592000  # 30 dias em segundos (30 * 24 * 60 * 60)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Mantém a sessão mesmo após fechar o navegador
+SESSION_SAVE_EVERY_REQUEST = True  # Renova a sessão a cada requisição
+
+CSRF_COOKIE_SAMESITE = "Lax"  # Mudado de "None" para "Lax"
+CSRF_COOKIE_SECURE = False  # False para desenvolvimento
+CSRF_COOKIE_HTTPONLY = False  # False para permitir JavaScript ler (se necessário)
+CSRF_COOKIE_DOMAIN = None  # None permite localhost
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
 
 
 # Application definition

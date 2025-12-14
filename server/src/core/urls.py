@@ -22,4 +22,11 @@ from . import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.home, name="home"),
+    path("api/login", views.login, name="login"),
+    path("api/logout", views.logout, name="logout"),
+    path("api/check-auth", views.check_auth, name="check_auth"),
+    path("api/signup", views.signup, name="signup"),
+    path("api/profile", views.get_profile, name="get_profile"),
+    path("api/profile/username", views.update_username, name="update_username"),
+    path("api/profile/password", views.update_password, name="update_password"),
 ]
