@@ -1,4 +1,11 @@
 node_modules
 lib
 .next
-server/db.sqlite3
+__pycache__
+*.pyc
+.DS_Store
+
+# Database
+*.sqlite3
+server/src/db.sqlite3
+server/src/core/db.sqlite3
