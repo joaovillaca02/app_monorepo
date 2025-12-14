@@ -15,12 +15,13 @@ import {
 } from "@/components/ui/sidebar"
 import { useState } from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 // Menu items.
 const items = [
     {
         title: "Página Inicial",
-        url: "#",
+        url: "/",
         icon: Home,
     },
     {
@@ -43,7 +44,7 @@ const items = [
 const accountItems = [
     {
         title: "Perfil",
-        url: "#",
+        url: "/profile",
         icon: User,
     },
     {
@@ -102,10 +103,10 @@ export function AppSidebar() {
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton asChild>
-                                        <a href={item.url}>
+                                        <Link href={item.url}>
                                             <item.icon />
                                             <span>{item.title}</span>
-                                        </a>
+                                        </Link>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
@@ -128,10 +129,10 @@ export function AppSidebar() {
                                     {accountItems.map((item) => (
                                         <SidebarMenuItem key={item.title}>
                                             <SidebarMenuButton asChild>
-                                                <a href="#">
+                                                <Link href={item.url}>
                                                     <item.icon />
                                                     <span>{item.title}</span>
-                                                </a>
+                                                </Link>
                                             </SidebarMenuButton>
                                         </SidebarMenuItem>
                                     ))}
@@ -160,10 +161,10 @@ export function AppSidebar() {
                                     {settingsItems.map((item) => (
                                         <SidebarMenuItem key={item.title}>
                                             <SidebarMenuButton asChild>
-                                                <a href="#">
+                                                <Link href={item.url}>
                                                     <item.icon />
                                                     <span>{item.title}</span>
-                                                </a>
+                                                </Link>
                                             </SidebarMenuButton>
                                         </SidebarMenuItem>
                                     ))}

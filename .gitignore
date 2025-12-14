@@ -9,3 +9,5 @@ __pycache__
 *.sqlite3
 server/src/db.sqlite3
 server/src/core/db.sqlite3
+
+.env
